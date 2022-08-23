@@ -20,7 +20,8 @@ public class Circulo extends Figura{
 
     @Override
     public double superficie() {
-        return Math.PI*this.radio*this.radio;
+        this.setSuperficie(Math.PI*this.radio*this.radio);
+        return this.getSuperficie();
     }
 
     @Override

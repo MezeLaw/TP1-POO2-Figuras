@@ -2,14 +2,14 @@ package com.mabogado.figuras;
 
 public abstract class Figura {
 
-    private double area;
+    private double superficie;
 
-    public double getArea() {
-        return area;
+    public double getSuperficie() {
+        return superficie;
     }
 
-    public void setArea(double area) {
-        this.area = area;
+    public void setSuperficie(double superficie) {
+        this.superficie = superficie;
     }
 
     public abstract double superficie();

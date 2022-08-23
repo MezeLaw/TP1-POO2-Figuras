@@ -30,7 +30,8 @@ public class Triangulo extends Figura{
 
     @Override
     public double superficie() {
-        return (this.altura*this.base)/2;
+        this.setSuperficie((this.altura*this.base)/2);
+        return this.getSuperficie();
     }
 
     @Override

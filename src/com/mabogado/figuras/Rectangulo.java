@@ -30,7 +30,8 @@ public class Rectangulo extends Figura{
 
     @Override
     public double superficie() {
-        return this.altura*this.base;
+        this.setSuperficie(this.altura*this.base);
+        return this.getSuperficie();
     }
 
     @Override
