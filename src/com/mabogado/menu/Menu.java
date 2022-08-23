@@ -17,7 +17,11 @@ public class Menu {
         this.opciones = opciones;
     }
 
-    public Menu(){}
+    public Menu(){
+        String[] ops = {"1- Consultar Posicion ", "2- Dar de baja objeto", "3- Agregar objeto manualmente",
+                "4- Listar objetos", "5- Objeto con superficie maxima", "6- Objeto con superficie minima", "7- Salir"};
+        this.opciones = ops;
+    }
 
     public Menu(String[]opciones){
         this.opciones = opciones;

@@ -1,5 +1,7 @@
 package com.mabogado;
 
+import com.mabogado.menu.Menu;
+
 import java.util.Scanner;
 
 public class Main {
@@ -8,9 +10,9 @@ public class Main {
 
 	// write your code here
 
+    Menu menu = new Menu();
+
 
     }
-
-
 
 }
