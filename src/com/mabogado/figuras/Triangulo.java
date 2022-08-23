@@ -29,7 +29,12 @@ public class Triangulo extends Figura{
     }
 
     @Override
-    public double getArea() {
+    public double superficie() {
         return (this.altura*this.base)/2;
+    }
+
+    @Override
+    public String mostrar() {
+        return "Triangulo de altura" + this.altura + " base " + this.base + " y superficie " + this.superficie();
     }
 }

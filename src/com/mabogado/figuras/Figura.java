@@ -8,5 +8,6 @@ public abstract class Figura {
         this.area = area;
     }
 
-    public abstract double getArea();
+    public abstract double superficie();
+    public abstract String mostrar();
 }

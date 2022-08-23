@@ -19,7 +19,12 @@ public class Circulo extends Figura{
     }
 
     @Override
-    public double getArea() {
+    public double superficie() {
         return Math.PI*this.radio*this.radio;
+    }
+
+    @Override
+    public String mostrar() {
+        return "Circulo de radio "+ this.radio + " y superficie " + this.superficie();
     }
 }
