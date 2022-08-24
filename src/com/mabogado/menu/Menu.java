@@ -49,9 +49,16 @@ public class Menu {
     }
 
     public void listarObjetos(Figura[] figuras) {
-        for( Figura figura : figuras ) {
-            System.out.println(figura.mostrar());
+
+        System.out.println("");
+        System.out.println(" La cantidad de figuras existentes es de: " + figuras.length + "\n");
+
+        for (int i=0; i<figuras.length; i++){
+             if(figuras[i]!=null){
+                 System.out.println(figuras[i].mostrar());
+             }
         }
+
         System.out.println("");
     }
 
