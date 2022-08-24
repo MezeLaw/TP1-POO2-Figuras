@@ -62,7 +62,7 @@ public class Main {
                             double radio = sn.nextDouble();
                             figuras = menu.agregarObjetoManualmente("C", radio, 0, 0, figuras);
                             menu.mostrarOpciones();
-                            System.out.println("");
+                            System.out.println("Figura agregada exitosamente \n");
                             break;
                         case 2:
                             System.out.println("Ingrese base del rectangulo: \n");
@@ -71,7 +71,7 @@ public class Main {
                             double alturaRectangulo = sn.nextDouble();
                             figuras = menu.agregarObjetoManualmente("R", 0, baseRectangulo, alturaRectangulo, figuras);
                             menu.mostrarOpciones();
-                            System.out.println("");
+                            System.out.println("Figura agregada exitosamente \n");
                             break;
                         case 3:
                             System.out.println("Ingrese base del triangulo: \n");
@@ -80,7 +80,7 @@ public class Main {
                             double alturaTriangulo =sn.nextDouble();
                             figuras = menu.agregarObjetoManualmente("T", 0, baseTriangulo, alturaTriangulo, figuras);
                             menu.mostrarOpciones();
-                            System.out.println("");
+                            System.out.println("Figura agregada exitosamente \n");
                             break;
                         default:
                             System.out.println("Opcion invalida. Volviendo al menu ppal\n");

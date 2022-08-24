@@ -58,7 +58,13 @@ public class Menu {
 
         if (indiceVacio == -1 ) {
             Figura[] figurasAux = new Figura[figuras.length+1];
-            figurasAux = figuras;
+
+            for(int a = 0; a<figuras.length;a++){
+                for(int b=0; b<figurasAux.length; b++){
+                    figurasAux[b]=figuras[a];
+                }
+            }
+
             if (inicial.equals("T")){
                 Triangulo tri = new Triangulo(base, altura);
                 figurasAux[figurasAux.length-1] = tri;
@@ -97,7 +103,6 @@ public class Menu {
     public void listarObjetos(Figura[] figuras) {
 
         System.out.println("");
-        System.out.println(" La cantidad de figuras existentes es de: " + figuras.length + "\n");
 
         for (int i=0; i<figuras.length; i++){
              if(figuras[i]!=null){
