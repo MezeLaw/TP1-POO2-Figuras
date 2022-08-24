@@ -71,7 +71,7 @@ public class Menu {
                 superficieMaxima = figura.getSuperficie();
             }
         }
-        System.out.println("La superficie maxima es de : " + superficieMaxima);
+        System.out.println("La superficie maxima es de : " + superficieMaxima + "\n");
     }
 
 
@@ -84,7 +84,7 @@ public class Menu {
                 superficieMinima = figura.getSuperficie();
             }
         }
-        System.out.println("La superficie minima es de : " + superficieMinima);
+        System.out.println("La superficie minima es de : " + superficieMinima + "\n");
     }
 
     public void salir(){

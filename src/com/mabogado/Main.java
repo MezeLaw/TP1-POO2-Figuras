@@ -57,11 +57,13 @@ public class Main {
                     menu.mostrarOpciones();
                     break;
                 case 5:
-                    System.out.println("Has seleccionado la opcion 5");
+                    System.out.println("El objeto con superficie maxima es: \n");
+                    menu.indicarSuperficieMaxima(figuras);
                     menu.mostrarOpciones();
                     break;
                 case 6:
-                    System.out.println("Has seleccionado la opcion 6");
+                    System.out.println("El objeto con superficie minima es: \n");
+                    menu.indicarSuperficieMinima(figuras);
                     menu.mostrarOpciones();
                     break;
                 case 7:
