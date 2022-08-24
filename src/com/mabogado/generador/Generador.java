@@ -18,7 +18,6 @@ public class Generador {
 
         Path path = Paths.get(fileName);
         Scanner scanner = new Scanner(path);
-        System.out.println("Read text file using Scanner");
 
         String tamanoVectorStr = scanner.nextLine();
         int tamanoVector = Integer.valueOf(tamanoVectorStr);

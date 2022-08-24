@@ -2,9 +2,6 @@ package com.mabogado.menu;
 
 import com.mabogado.figuras.Figura;
 
-import java.util.NoSuchElementException;
-import java.util.Scanner;
-
 public class Menu {
 
     private String[] opciones;
