@@ -34,7 +34,7 @@ public class Menu {
     }
 
     public void consultarPosicion(int posicion, Figura[]figuras) {
-        figuras[posicion].mostrar();
+        System.out.println(figuras[posicion].mostrar());
     }
 
     public void darDeBajaObjeto(int posicion, Figura[] figuras) {

@@ -33,7 +33,10 @@ public class Main {
             int opcion = sn.nextInt();
             switch(opcion){
                 case 1:
-                    System.out.println("Has seleccionado la opcion 1");
+                    System.out.println("Ingrese la posición que quiere consultar: ");
+                    Scanner sn2 = new Scanner(System.in);
+                    int posicion = sn.nextInt() + 1;
+                    menu.consultarPosicion(posicion, figuras);
                     break;
                 case 2:
                     System.out.println("Has seleccionado la opcion 2");
