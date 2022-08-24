@@ -33,7 +33,7 @@ public class Main {
             int opcion = sn.nextInt();
             switch(opcion){
                 case 1:
-                    System.out.println("Ingrese la posición que quiere consultar: ");
+                    System.out.println("Ingrese la posición que quiere consultar: \n");
                     sn = new Scanner(System.in);
                     int p1 = sn.nextInt() - 1;
                     menu.consultarPosicion(p1, figuras);
@@ -41,14 +41,38 @@ public class Main {
                     menu.mostrarOpciones();
                     break;
                 case 2:
-                    System.out.println("Ingrese la posicion a eliminar");
+                    System.out.println("Ingrese la posicion a eliminar: \n");
                     sn = new Scanner(System.in);
                     int p2 = sn.nextInt() - 1;
                     menu.darDeBajaObjeto(p2, figuras);
                     menu.mostrarOpciones();
                     break;
                 case 3:
-                    System.out.println("Has seleccionado la opcion 3");
+                    System.out.println("Indique el tipo de objeto a agregar manualmente.\n");
+                    System.out.println("1-Circulo \n");
+                    System.out.println("2-Rectangulo \n");
+                    System.out.println("3-Triangulo \n");
+
+
+                    int p3 = sn.nextInt();
+
+                    switch (p3){
+                        case 1:
+                            double radio = sn.nextDouble();
+                            figuras = menu.agregarObjetoManualmente("C", radio, 0, 0, figuras);
+                        case 2:
+                            double baseRectangulo = sn.nextDouble();
+                            double alturaRectangulo = sn.nextDouble();
+                            figuras = menu.agregarObjetoManualmente("R", 0, baseRectangulo, alturaRectangulo, figuras);
+                        case 3:
+                            double baseTriangulo = sn.nextDouble();
+                            double alturaTriangulo =sn.nextDouble();
+                            figuras = menu.agregarObjetoManualmente("T", 0, baseTriangulo, alturaTriangulo, figuras);
+                        default:
+                            System.out.println("Opcion invalida. Volviendo al menu ppal\n");
+                            menu.mostrarOpciones();
+                    }
+
                     menu.mostrarOpciones();
                     break;
                 case 4:

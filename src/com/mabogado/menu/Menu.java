@@ -40,9 +40,52 @@ public class Menu {
     }
 
 
-    public void agregarObjetoManualmente(){
+    public Figura[] agregarObjetoManualmente(String inicial, double radio, double altura, double base, Figura[] figuras){
         //TODO * - Agregar un nuevo objeto de forma manual (para esto debe verificar si hay espacio
         //     * libre en el vector, de lo contrario, deberá redimensionarlo).
+
+        int indiceVacio = -1;
+
+        for (int i=0; i<figuras.length; i++){
+            if (figuras[i]==null){
+                indiceVacio = i;
+                break;
+            }
+        }
+
+        if (indiceVacio == -1 ) {
+            Figura[] figurasAux = new Figura[figuras.length+1];
+
+            if (inicial.equals("T")){
+
+            }
+
+            if (inicial.equals("R")){
+
+            }
+
+            if (inicial.equals("C")){
+
+            }
+
+
+        } else {
+            if (inicial.equals("T")){
+
+            }
+
+            if (inicial.equals("R")){
+
+            }
+
+            if (inicial.equals("C")){
+
+            }
+
+            return figuras;
+
+        }
+
     }
 
     public void listarObjetos(Figura[] figuras) {
