@@ -34,25 +34,35 @@ public class Main {
             switch(opcion){
                 case 1:
                     System.out.println("Ingrese la posición que quiere consultar: ");
-                    Scanner sn2 = new Scanner(System.in);
-                    int posicion = sn.nextInt() + 1;
-                    menu.consultarPosicion(posicion, figuras);
+                    sn = new Scanner(System.in);
+                    int p1 = sn.nextInt() - 1;
+                    menu.consultarPosicion(p1, figuras);
+                    System.out.println("\n");
+                    menu.mostrarOpciones();
                     break;
                 case 2:
-                    System.out.println("Has seleccionado la opcion 2");
+                    System.out.println("Ingrese la posicion a eliminar");
+                    sn = new Scanner(System.in);
+                    int p2 = sn.nextInt() - 1;
+                    menu.darDeBajaObjeto(p2, figuras);
+                    menu.mostrarOpciones();
                     break;
                 case 3:
                     System.out.println("Has seleccionado la opcion 3");
+                    menu.mostrarOpciones();
                     break;
                 case 4:
                     System.out.println("Objetos creados: ");
                     menu.listarObjetos(figuras);
+                    menu.mostrarOpciones();
                     break;
                 case 5:
                     System.out.println("Has seleccionado la opcion 5");
+                    menu.mostrarOpciones();
                     break;
                 case 6:
                     System.out.println("Has seleccionado la opcion 6");
+                    menu.mostrarOpciones();
                     break;
                 case 7:
                     menu.salir();
