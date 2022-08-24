@@ -58,16 +58,30 @@ public class Main {
 
                     switch (p3){
                         case 1:
+                            System.out.println("Ingrese radio del circulo: \n");
                             double radio = sn.nextDouble();
                             figuras = menu.agregarObjetoManualmente("C", radio, 0, 0, figuras);
+                            menu.mostrarOpciones();
+                            System.out.println("");
+                            break;
                         case 2:
+                            System.out.println("Ingrese base del rectangulo: \n");
                             double baseRectangulo = sn.nextDouble();
+                            System.out.println("Ingrese altura del rectangulo: \n");
                             double alturaRectangulo = sn.nextDouble();
                             figuras = menu.agregarObjetoManualmente("R", 0, baseRectangulo, alturaRectangulo, figuras);
+                            menu.mostrarOpciones();
+                            System.out.println("");
+                            break;
                         case 3:
+                            System.out.println("Ingrese base del triangulo: \n");
                             double baseTriangulo = sn.nextDouble();
+                            System.out.println("Ingrese altura del triangulo: \n");
                             double alturaTriangulo =sn.nextDouble();
                             figuras = menu.agregarObjetoManualmente("T", 0, baseTriangulo, alturaTriangulo, figuras);
+                            menu.mostrarOpciones();
+                            System.out.println("");
+                            break;
                         default:
                             System.out.println("Opcion invalida. Volviendo al menu ppal\n");
                             menu.mostrarOpciones();
