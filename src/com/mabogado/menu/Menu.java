@@ -1,6 +1,9 @@
 package com.mabogado.menu;
 
+import com.mabogado.figuras.Circulo;
 import com.mabogado.figuras.Figura;
+import com.mabogado.figuras.Rectangulo;
+import com.mabogado.figuras.Triangulo;
 
 public class Menu {
 
@@ -55,35 +58,38 @@ public class Menu {
 
         if (indiceVacio == -1 ) {
             Figura[] figurasAux = new Figura[figuras.length+1];
-
+            figurasAux = figuras;
             if (inicial.equals("T")){
-
+                Triangulo tri = new Triangulo(base, altura);
+                figurasAux[figurasAux.length-1] = tri;
             }
 
             if (inicial.equals("R")){
-
+                Rectangulo re = new Rectangulo(base, altura);
+                figurasAux[figurasAux.length-1] = re;
             }
 
             if (inicial.equals("C")){
-
+                Circulo ci = new Circulo(radio);
+                figurasAux[figurasAux.length-1] = ci;
             }
-
-
+            return figurasAux;
         } else {
             if (inicial.equals("T")){
-
+                Triangulo tri = new Triangulo(base, altura);
+                figuras[indiceVacio] = tri;
             }
 
             if (inicial.equals("R")){
-
+                Rectangulo re = new Rectangulo(base, altura);
+                figuras[indiceVacio] = re;
             }
 
             if (inicial.equals("C")){
-
+                Circulo ci = new Circulo(radio);
+                figuras[indiceVacio] = ci;
             }
-
             return figuras;
-
         }
 
     }
