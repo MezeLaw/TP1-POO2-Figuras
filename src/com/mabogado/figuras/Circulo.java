@@ -6,6 +6,7 @@ public class Circulo extends Figura{
 
     public Circulo(double radio) {
         this.radio = radio;
+        this.superficie();
     }
 
     public Circulo() {}

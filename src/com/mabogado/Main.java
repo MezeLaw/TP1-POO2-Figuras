@@ -5,8 +5,6 @@ import com.mabogado.generador.Generador;
 import com.mabogado.menu.Menu;
 
 import java.io.IOException;
-import java.nio.file.Path;
-import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Main {
@@ -44,7 +42,8 @@ public class Main {
                     System.out.println("Has seleccionado la opcion 3");
                     break;
                 case 4:
-                    System.out.println("Has seleccionado la opcion 4");
+                    System.out.println("Objetos creados: ");
+                    menu.listarObjetos(figuras);
                     break;
                 case 5:
                     System.out.println("Has seleccionado la opcion 5");

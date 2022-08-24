@@ -8,6 +8,7 @@ public class Triangulo extends Figura{
     public Triangulo(double base, double altura) {
         this.base = base;
         this.altura = altura;
+        this.superficie();
     }
 
     public Triangulo(){}
