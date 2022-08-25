@@ -11,7 +11,12 @@ import java.nio.file.Paths;
 import java.util.Scanner;
 
 public class Generador {
-
+    /**
+     *
+     * @param fileName
+     * @return retorna el vector de figuras en base al archivo
+     * @throws IOException
+     */
     public Figura[] generarFigurasDesdeArchivo(String fileName) throws IOException {
 
         Figura[] figuras;
@@ -36,6 +41,11 @@ public class Generador {
         return figuras;
     }
 
+    /**
+     *
+     * @param linea -
+     * @return figura en base a la linea ingresada
+     */
     public Figura construirFigura(String linea) {
 
         String[] lineaDesestructurada = linea.split("\\s+");
