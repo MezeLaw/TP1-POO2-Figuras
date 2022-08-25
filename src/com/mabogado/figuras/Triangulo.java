@@ -37,6 +37,6 @@ public class Triangulo extends Figura{
 
     @Override
     public String mostrar() {
-        return "Triangulo de altura" + this.altura + " base " + this.base + " y superficie " + this.superficie();
+        return "Triangulo de altura " + this.altura + " base " + this.base + " y superficie " + this.superficie();
     }
 }
