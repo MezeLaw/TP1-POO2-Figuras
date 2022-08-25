@@ -11,7 +11,12 @@ public abstract class Figura {
     public void setSuperficie(double superficie) {
         this.superficie = superficie;
     }
-
+    /*
+        Retorna la superficie de una figura
+     */
     public abstract double superficie();
+    /*
+        Muestra la informacion de la figura
+     */
     public abstract String mostrar();
 }
