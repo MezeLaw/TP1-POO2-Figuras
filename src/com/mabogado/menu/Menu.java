@@ -63,11 +63,8 @@ public class Menu {
      */
 
     public Figura[] agregarObjetoManualmente(String inicial, double radio, double altura, double base, Figura[] figuras){
-        //TODO * - Agregar un nuevo objeto de forma manual (para esto debe verificar si hay espacio
-        //     * libre en el vector, de lo contrario, deberá redimensionarlo).
 
         int indiceVacio = verificarEspacioVacio(figuras);
-
 
         if (indiceVacio == -1 ) {
             Figura[] figurasAux = agrandarVector(figuras);
