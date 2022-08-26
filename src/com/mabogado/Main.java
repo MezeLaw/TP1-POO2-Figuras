@@ -34,7 +34,6 @@ public class Main {
             switch(opcion){
                 case 1:
                     System.out.println("Ingrese la posición que quiere consultar: \n");
-                    sn = new Scanner(System.in);
                     int p1 = sn.nextInt() - 1;
                     menu.consultarPosicion(p1, figuras);
                     System.out.println("\n");
@@ -42,7 +41,6 @@ public class Main {
                     break;
                 case 2:
                     System.out.println("Ingrese la posicion a eliminar: \n");
-                    sn = new Scanner(System.in);
                     int p2 = sn.nextInt() - 1;
                     menu.darDeBajaObjeto(p2, figuras);
                     menu.mostrarOpciones();
@@ -52,8 +50,7 @@ public class Main {
                     System.out.println("1-Circulo \n");
                     System.out.println("2-Rectangulo \n");
                     System.out.println("3-Triangulo \n");
-
-
+                    System.out.println("<<<<<--->>>>> NO se permiten numeros con punto. Por ejemplo: 15.5 <<<<<--->>>>> \n");
                     int p3 = sn.nextInt();
 
                     switch (p3){
@@ -61,7 +58,7 @@ public class Main {
                             System.out.println("Ingrese radio del circulo: \n");
                             double radio = sn.nextDouble();
                             figuras = menu.agregarObjetoManualmente("C", radio, 0, 0, figuras);
-                            menu.mostrarOpciones();
+
                             System.out.println("Figura agregada exitosamente \n");
                             break;
                         case 2:
@@ -70,7 +67,7 @@ public class Main {
                             System.out.println("Ingrese altura del rectangulo: \n");
                             double alturaRectangulo = sn.nextDouble();
                             figuras = menu.agregarObjetoManualmente("R", 0, baseRectangulo, alturaRectangulo, figuras);
-                            menu.mostrarOpciones();
+
                             System.out.println("Figura agregada exitosamente \n");
                             break;
                         case 3:
@@ -79,7 +76,7 @@ public class Main {
                             System.out.println("Ingrese altura del triangulo: \n");
                             double alturaTriangulo =sn.nextDouble();
                             figuras = menu.agregarObjetoManualmente("T", 0, baseTriangulo, alturaTriangulo, figuras);
-                            menu.mostrarOpciones();
+
                             System.out.println("Figura agregada exitosamente \n");
                             break;
                         default:

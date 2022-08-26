@@ -40,11 +40,13 @@ public class Menu {
 
     /*
         Pre: recibe una posicion (int) y un vector de figuras
-        Post: muestra la figura de la posicion indicada
+        Post: muestra la figura de la posicion indicada siempre y cuando no sea null
      */
 
     public void consultarPosicion(int posicion, Figura[]figuras) {
-        System.out.println(figuras[posicion].mostrar());
+        if(figuras[posicion]!= null){
+            System.out.println(figuras[posicion].mostrar());
+        }
     }
 
     /*
@@ -97,7 +99,7 @@ public class Menu {
         double superficieMaxima = 0;
 
         for (Figura figura : figuras ) {
-            if (figura.getSuperficie()>superficieMaxima) {
+            if (figura!= null && figura.getSuperficie()>superficieMaxima) {
                 superficieMaxima = figura.getSuperficie();
             }
         }
@@ -110,11 +112,16 @@ public class Menu {
      */
 
     public void indicarSuperficieMinima(Figura[] figuras) {
-        //Arbitrariamente asigno el primero como el mayor. Definir manejo de excepciones
-        double superficieMinima = figuras[0].getSuperficie();
+        //Arbitrariamente asigno el primero no null como el mayor. Definir manejo de excepciones
+        double superficieMinima = -1;
+        for(Figura f : figuras) {
+            if (f != null ) {
+                superficieMinima = f.getSuperficie();
+            }
+        }
 
         for (Figura figura : figuras ) {
-            if (figura.getSuperficie()<superficieMinima) {
+            if (figura!= null && figura.getSuperficie()<superficieMinima) {
                 superficieMinima = figura.getSuperficie();
             }
         }
