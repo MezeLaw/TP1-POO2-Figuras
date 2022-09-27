@@ -19,7 +19,6 @@ public class Main {
         System.out.println("Obteniendo figuras a partir del archivo txt local. Aguarde por favor.... \n");
 
         Generador gen = new Generador();
-
         Figura[] figuras = gen.generarFigurasDesdeArchivo(fileName);
 
         System.out.println("Ingrese la opcion deseada: \n");
@@ -31,84 +30,7 @@ public class Main {
         while (!salir) {
             Scanner sn = new Scanner(System.in);
             int opcion = sn.nextInt();
-            switch(opcion){
-                case 1:
-                    System.out.println("Ingrese la posición que quiere consultar: \n");
-                    int p1 = sn.nextInt() - 1;
-                    menu.consultarPosicion(p1, figuras);
-                    System.out.println("\n");
-                    menu.mostrarOpciones();
-                    break;
-                case 2:
-                    System.out.println("Ingrese la posicion a eliminar: \n");
-                    int p2 = sn.nextInt() - 1;
-                    menu.darDeBajaObjeto(p2, figuras);
-                    menu.mostrarOpciones();
-                    break;
-                case 3:
-                    System.out.println("Indique el tipo de objeto a agregar manualmente.\n");
-                    System.out.println("1-Circulo \n");
-                    System.out.println("2-Rectangulo \n");
-                    System.out.println("3-Triangulo \n");
-                    System.out.println("<<<<<--->>>>> NO se permiten numeros con punto. Por ejemplo: 15.5 <<<<<--->>>>> \n");
-                    int p3 = sn.nextInt();
-
-                    switch (p3){
-                        case 1:
-                            System.out.println("Ingrese radio del circulo: \n");
-                            double radio = sn.nextDouble();
-                            figuras = menu.agregarObjetoManualmente("C", radio, 0, 0, figuras);
-
-                            System.out.println("Figura agregada exitosamente \n");
-                            break;
-                        case 2:
-                            System.out.println("Ingrese base del rectangulo: \n");
-                            double baseRectangulo = sn.nextDouble();
-                            System.out.println("Ingrese altura del rectangulo: \n");
-                            double alturaRectangulo = sn.nextDouble();
-                            figuras = menu.agregarObjetoManualmente("R", 0, baseRectangulo, alturaRectangulo, figuras);
-
-                            System.out.println("Figura agregada exitosamente \n");
-                            break;
-                        case 3:
-                            System.out.println("Ingrese base del triangulo: \n");
-                            double baseTriangulo = sn.nextDouble();
-                            System.out.println("Ingrese altura del triangulo: \n");
-                            double alturaTriangulo =sn.nextDouble();
-                            figuras = menu.agregarObjetoManualmente("T", 0, baseTriangulo, alturaTriangulo, figuras);
-
-                            System.out.println("Figura agregada exitosamente \n");
-                            break;
-                        default:
-                            System.out.println("Opcion invalida. Volviendo al menu ppal\n");
-                            menu.mostrarOpciones();
-                    }
-
-                    menu.mostrarOpciones();
-                    break;
-                case 4:
-                    System.out.println("Objetos creados: ");
-                    menu.listarObjetos(figuras);
-                    menu.mostrarOpciones();
-                    break;
-                case 5:
-                    System.out.println("El objeto con superficie maxima es: \n");
-                    menu.indicarSuperficieMaxima(figuras);
-                    menu.mostrarOpciones();
-                    break;
-                case 6:
-                    System.out.println("El objeto con superficie minima es: \n");
-                    menu.indicarSuperficieMinima(figuras);
-                    menu.mostrarOpciones();
-                    break;
-                case 7:
-                    menu.salir();
-                    salir = true;
-                    break;
-                default:
-                    menu.mostrarOpciones();
-                    break;
-            }
+            figuras = menu.seleccionarOpcion(opcion, figuras);
         }
     }
 }
