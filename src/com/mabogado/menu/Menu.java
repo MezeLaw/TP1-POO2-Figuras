@@ -5,56 +5,80 @@ import com.mabogado.figuras.Figura;
 import com.mabogado.figuras.Rectangulo;
 import com.mabogado.figuras.Triangulo;
 
-import java.util.ArrayList;
 import java.util.Scanner;
 
 public class Menu {
 
     private String[] opciones;
 
+    /**
+     * Post:
+     *
+     * @return las opciones del menu
+     */
     public String[] getOpciones() {
         return opciones;
     }
 
+    /**
+     * Pre:
+     * recibe el @param opciones
+     * Post:
+     * setea las opciones del menu
+     */
     public void setOpciones(String[] opciones) {
         this.opciones = opciones;
     }
 
+    /**
+     * Post: Instancia un menu con opciones predefinidas
+     */
     public Menu() {
         String[] ops = {"1- Consultar Posicion ", "2- Dar de baja objeto", "3- Agregar objeto manualmente",
                 "4- Listar objetos", "5- Objeto con superficie maxima", "6- Objeto con superficie minima", "7- Salir"};
         this.opciones = ops;
     }
 
+    /**
+     * Pre:
+     * recibe el @param opciones
+     * Post:
+     * instancia un menu con las opciones recibidas
+     */
     public Menu(String[] opciones) {
         this.opciones = opciones;
     }
 
-    /*
-        Pre: No requiere args
-        Post: imprime las opciones disponibles del menu
+    /**
+     * Post: muestra (imprime) las opciones del menu
      */
-
     public void mostrarOpciones() {
         for (String op : this.opciones) {
             System.out.println(op);
         }
     }
 
-    /*
-        Pre: recibe una posicion (int) y un vector de figuras
-        Post: muestra la figura de la posicion indicada siempre y cuando no sea null
+    /**
+     * Pre:
+     * recibe los param
+     *
+     * @param posicion
+     * @param figuras  Post:
+     *                 muestra la figura para la posición indicada
      */
-
     public void consultarPosicion(int posicion, Figura[] figuras) {
         if (figuras[posicion] != null) {
             System.out.println(figuras[posicion].mostrar());
         }
     }
 
-    /*
-        Pre: recibe una posicion (int) y un vector de figuras
-        Post: elimina la figura de la posicion indicada
+    /**
+     * Pre:
+     * recibe los param
+     *
+     * @param posicion
+     * @param figuras  Post:
+     *                 elimina la figura de la posición indicada
      */
 
     public void darDeBajaObjeto(int posicion, Figura[] figuras) {
@@ -62,9 +86,15 @@ public class Menu {
         System.out.println("Se elimino el objeto de la posicion indicada");
     }
 
-    /*
-        Pre: Se reciben la inicial de la figura, y los valores que correspondan (radio, altura o base)
-        Post: se agrega manualmente al vector la nueva figura
+    /**
+     * Pre: recibidos los param
+     *
+     * @param inicial
+     * @param radio
+     * @param altura
+     * @param base
+     * @param figuras Post:
+     * @return crea y agrega la figura correspondiente con los valores indicados
      */
 
     public Figura[] agregarObjetoManualmente(String inicial, double radio, double altura, double base, Figura[] figuras) {
@@ -79,6 +109,12 @@ public class Menu {
         return crearFigura(figuras, indiceVacio, inicial, radio, base, altura);
     }
 
+    /**
+     * Pre:
+     * recibe como @param figuras
+     * Post:
+     * Lista las figuras recibidas con sus detalles
+     */
     public void listarObjetos(Figura[] figuras) {
 
         System.out.println("");
@@ -92,9 +128,11 @@ public class Menu {
         System.out.println("");
     }
 
-    /*
-           Pre: Se recibe un vector de figuras
-           Post: se retorna la superficie maxima
+    /**
+     * Pre:
+     * recibido el @param figuras
+     * Post:
+     * Retorna el valor de la figura con superficie maxima
      */
 
     public void indicarSuperficieMaxima(Figura[] figuras) {
@@ -109,11 +147,13 @@ public class Menu {
         System.out.println("La superficie maxima es de : " + superficieMaxima + "\n");
     }
 
-    /*
-        Pre: Se recibe un vector de figuras
-        Post: se retorna la superficie minima
-     */
 
+    /**
+     * Pre:
+     * recibido el @param figuras
+     * Post:
+     * Retorna el valor de la figura con superficie minima
+     */
     public void indicarSuperficieMinima(Figura[] figuras) {
         //Arbitrariamente asigno el primero no null como el mayor. Definir manejo de excepciones
         double superficieMinima = -1;
@@ -131,6 +171,9 @@ public class Menu {
         System.out.println("La superficie minima es de : " + superficieMinima + "\n");
     }
 
+    /**
+     * Post: finaliza la app
+     */
     public void salir() {
         System.out.println("Gracias por utilizar la aplicacion de figuras. Hasta luego! ");
         System.out.println(" ");
@@ -142,6 +185,13 @@ public class Menu {
         Post: se retorna el indice vacio. En caso de no encontrar alguno, retorna -1
      */
 
+    /**
+     * Pre:
+     * recibe como @param figuras
+     * Post:
+     *
+     * @return el indiceVacio donde -1 indica que no hay ninguno vacio
+     */
     public int verificarEspacioVacio(Figura[] figuras) {
         int indiceVacio = -1;
         for (int i = 0; i < figuras.length; i++) {
@@ -154,9 +204,12 @@ public class Menu {
         return indiceVacio;
     }
 
-    /*
-        Pre: recibe el viejo vector
-        Post: retorna un vector con el size aumentado y los valores copiados
+    /**
+     * Pre:
+     * recibe el @param figuras
+     * Post:
+     *
+     * @return retorna un nuevo vector con mayor dimension (1) y con los valores del vector original incluidos
      */
 
     public Figura[] agrandarVector(Figura[] figuras) {
@@ -169,10 +222,20 @@ public class Menu {
         return figurasAux;
     }
 
-    /*
-        Pre: recibe el vector de figuras, el indice en el que se agregará, y los valores de la figura a crear
-        Post: retorna el vector de figuras con la figura nueva incluida
+
+    /**
+     * Pre:
+     * recibidos los param
+     *
+     * @param figuras
+     * @param indice
+     * @param inicial
+     * @param radio
+     * @param base
+     * @param altura  Post:
+     * @return la lista de figuras donde se añade la figura deseada en la posicion indicada
      */
+
     public Figura[] crearFigura(Figura[] figuras, int indice, String inicial, double radio, double base, double altura) {
 
         if (inicial.equals("T")) {
@@ -192,23 +255,28 @@ public class Menu {
         return figuras;
     }
 
-    /*
-        Pre: Recibe la opción deseada y las figuras existentes
-        Post: Realiza lo indicado retornando las figuras en su estado actual
+
+    /**
+     * Pre:
+     * recibidos los param
+     *
+     * @param opcion
+     * @param figuras Post:
+     * @return retorna lo referente a la opcion seleccionada
      */
     public Figura[] seleccionarOpcion(int opcion, Figura[] figuras) {
-        Scanner sn = new Scanner(System.in);
+        Scanner scanner = new Scanner(System.in);
         switch (opcion) {
             case 1:
                 System.out.println("Ingrese la posición que quiere consultar: \n");
-                int p1 = sn.nextInt() - 1;
+                int p1 = scanner.nextInt() - 1;
                 consultarPosicion(p1, figuras);
                 System.out.println("\n");
                 mostrarOpciones();
                 break;
             case 2:
                 System.out.println("Ingrese la posicion a eliminar: \n");
-                int p2 = sn.nextInt() - 1;
+                int p2 = scanner.nextInt() - 1;
                 darDeBajaObjeto(p2, figuras);
                 mostrarOpciones();
                 break;
@@ -218,29 +286,29 @@ public class Menu {
                 System.out.println("2-Rectangulo \n");
                 System.out.println("3-Triangulo \n");
                 System.out.println("<<<<<--->>>>> NO se permiten numeros con punto. Por ejemplo: 15.5 <<<<<--->>>>> \n");
-                int p3 = sn.nextInt();
+                int p3 = scanner.nextInt();
 
                 switch (p3) {
                     case 1:
                         System.out.println("Ingrese radio del circulo: \n");
-                        double radio = sn.nextDouble();
+                        double radio = scanner.nextDouble();
                         figuras = agregarObjetoManualmente("C", radio, 0, 0, figuras);
                         System.out.println("Figura agregada exitosamente \n");
                         break;
                     case 2:
                         System.out.println("Ingrese base del rectangulo: \n");
-                        double baseRectangulo = sn.nextDouble();
+                        double baseRectangulo = scanner.nextDouble();
                         System.out.println("Ingrese altura del rectangulo: \n");
-                        double alturaRectangulo = sn.nextDouble();
+                        double alturaRectangulo = scanner.nextDouble();
                         figuras = agregarObjetoManualmente("R", 0, baseRectangulo, alturaRectangulo, figuras);
 
                         System.out.println("Figura agregada exitosamente \n");
                         break;
                     case 3:
                         System.out.println("Ingrese base del triangulo: \n");
-                        double baseTriangulo = sn.nextDouble();
+                        double baseTriangulo = scanner.nextDouble();
                         System.out.println("Ingrese altura del triangulo: \n");
-                        double alturaTriangulo = sn.nextDouble();
+                        double alturaTriangulo = scanner.nextDouble();
                         figuras = agregarObjetoManualmente("T", 0, baseTriangulo, alturaTriangulo, figuras);
                         System.out.println("Figura agregada exitosamente \n");
                         break;

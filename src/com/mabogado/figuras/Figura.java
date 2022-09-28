@@ -4,21 +4,36 @@ public abstract class Figura {
 
     private double superficie;
 
+    /**
+     * Post:
+     *
+     * @return superficie de la figura
+     */
     public double getSuperficie() {
         return superficie;
     }
 
+    /**
+     * Pre:
+     *
+     * @param superficie dada la superficie,
+     *                   Post: setea la superficie con el valor recibido
+     */
     public void setSuperficie(double superficie) {
         this.superficie = superficie;
     }
 
-    /*
-        Retorna la superficie de una figura
+    /**
+     * Post:
+     *
+     * @return la superficie de la figugra
      */
     public abstract double superficie();
 
-    /*
-        Muestra la informacion de la figura
+    /**
+     * Post:
+     *
+     * @return muestra la informacion de la figura
      */
     public abstract String mostrar();
 }
