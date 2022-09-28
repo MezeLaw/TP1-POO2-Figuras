@@ -81,7 +81,7 @@ public class Menu {
      *                 elimina la figura de la posición indicada
      */
 
-    public void darDeBajaObjeto(int posicion, Figura[] figuras) {
+    public void eliminarFigura(int posicion, Figura[] figuras) {
         figuras[posicion] = null;
         System.out.println("Se elimino el objeto de la posicion indicada");
     }
@@ -97,7 +97,7 @@ public class Menu {
      * @return crea y agrega la figura correspondiente con los valores indicados
      */
 
-    public Figura[] agregarObjetoManualmente(String inicial, double radio, double altura, double base, Figura[] figuras) {
+    public Figura[] agregarFigura(String inicial, double radio, double altura, double base, Figura[] figuras) {
 
         int indiceVacio = verificarEspacioVacio(figuras);
 
@@ -135,7 +135,7 @@ public class Menu {
      * Retorna el valor de la figura con superficie maxima
      */
 
-    public void indicarSuperficieMaxima(Figura[] figuras) {
+    public void consultarSuperficieMax(Figura[] figuras) {
 
         double superficieMaxima = 0;
 
@@ -154,7 +154,7 @@ public class Menu {
      * Post:
      * Retorna el valor de la figura con superficie minima
      */
-    public void indicarSuperficieMinima(Figura[] figuras) {
+    public void consultarSuperficieMin(Figura[] figuras) {
         //Arbitrariamente asigno el primero no null como el mayor. Definir manejo de excepciones
         double superficieMinima = -1;
         for (Figura f : figuras) {
@@ -277,7 +277,7 @@ public class Menu {
             case 2:
                 System.out.println("Ingrese la posicion a eliminar: \n");
                 int p2 = scanner.nextInt() - 1;
-                darDeBajaObjeto(p2, figuras);
+                eliminarFigura(p2, figuras);
                 mostrarOpciones();
                 break;
             case 3:
@@ -292,7 +292,7 @@ public class Menu {
                     case 1:
                         System.out.println("Ingrese radio del circulo: \n");
                         double radio = scanner.nextDouble();
-                        figuras = agregarObjetoManualmente("C", radio, 0, 0, figuras);
+                        figuras = agregarFigura("C", radio, 0, 0, figuras);
                         System.out.println("Figura agregada exitosamente \n");
                         break;
                     case 2:
@@ -300,7 +300,7 @@ public class Menu {
                         double baseRectangulo = scanner.nextDouble();
                         System.out.println("Ingrese altura del rectangulo: \n");
                         double alturaRectangulo = scanner.nextDouble();
-                        figuras = agregarObjetoManualmente("R", 0, baseRectangulo, alturaRectangulo, figuras);
+                        figuras = agregarFigura("R", 0, baseRectangulo, alturaRectangulo, figuras);
 
                         System.out.println("Figura agregada exitosamente \n");
                         break;
@@ -309,7 +309,7 @@ public class Menu {
                         double baseTriangulo = scanner.nextDouble();
                         System.out.println("Ingrese altura del triangulo: \n");
                         double alturaTriangulo = scanner.nextDouble();
-                        figuras = agregarObjetoManualmente("T", 0, baseTriangulo, alturaTriangulo, figuras);
+                        figuras = agregarFigura("T", 0, baseTriangulo, alturaTriangulo, figuras);
                         System.out.println("Figura agregada exitosamente \n");
                         break;
                     default:
@@ -326,12 +326,12 @@ public class Menu {
                 break;
             case 5:
                 System.out.println("El objeto con superficie maxima es: \n");
-                indicarSuperficieMaxima(figuras);
+                consultarSuperficieMax(figuras);
                 mostrarOpciones();
                 break;
             case 6:
                 System.out.println("El objeto con superficie minima es: \n");
-                indicarSuperficieMinima(figuras);
+                consultarSuperficieMin(figuras);
                 mostrarOpciones();
                 break;
             case 7:

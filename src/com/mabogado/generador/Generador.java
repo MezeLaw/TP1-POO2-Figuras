@@ -46,10 +46,10 @@ public class Generador {
      */
     public Figura construirFigura(String linea) {
 
-        String[] lineaDesestructurada = linea.split("\\s+");
+        String[] lineAux = linea.split("\\s+");
 
         //Asumo que es un el archivo siempre vendra bien y no verifico el size del string, paso directo a la inicial
-        String inicial = lineaDesestructurada[0];
+        String inicial = lineAux[0];
 
         double base = 0;
         double altura = 0;
@@ -57,15 +57,15 @@ public class Generador {
 
         switch (inicial) {
             case "T":
-                base = Double.valueOf(lineaDesestructurada[1]);
-                altura = Double.valueOf(lineaDesestructurada[2]);
+                base = Double.valueOf(lineAux[1]);
+                altura = Double.valueOf(lineAux[2]);
                 return new Triangulo(base, altura);
             case "R":
-                base = Double.valueOf(lineaDesestructurada[1]);
-                altura = Double.valueOf(lineaDesestructurada[2]);
+                base = Double.valueOf(lineAux[1]);
+                altura = Double.valueOf(lineAux[2]);
                 return new Rectangulo(base, altura);
             default:
-                radio = Double.valueOf(lineaDesestructurada[1]);
+                radio = Double.valueOf(lineAux[1]);
                 return new Circulo(radio);
         }
     }
