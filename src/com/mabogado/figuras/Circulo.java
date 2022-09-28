@@ -1,6 +1,6 @@
 package com.mabogado.figuras;
 
-public class Circulo extends Figura{
+public class Circulo extends Figura {
 
     private double radio;
 
@@ -9,7 +9,8 @@ public class Circulo extends Figura{
         this.superficie();
     }
 
-    public Circulo() {}
+    public Circulo() {
+    }
 
     public double getRadio() {
         return radio;
@@ -21,12 +22,12 @@ public class Circulo extends Figura{
 
     @Override
     public double superficie() {
-        this.setSuperficie(Math.PI*this.radio*this.radio);
+        this.setSuperficie(Math.PI * this.radio * this.radio);
         return this.getSuperficie();
     }
 
     @Override
     public String mostrar() {
-        return "Circulo de radio "+ this.radio + " y superficie " + this.superficie();
+        return "Circulo de radio " + this.radio + " y superficie " + this.superficie();
     }
 }

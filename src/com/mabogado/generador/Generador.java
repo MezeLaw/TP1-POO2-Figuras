@@ -12,7 +12,6 @@ import java.util.Scanner;
 
 public class Generador {
     /**
-     *
      * @param fileName
      * @return retorna el vector de figuras en base al archivo
      * @throws IOException
@@ -29,9 +28,9 @@ public class Generador {
 
         figuras = new Figura[tamanoVector];
 
-        for (int i=0; i<tamanoVector; i++) {
+        for (int i = 0; i < tamanoVector; i++) {
             if (scanner.hasNextLine()) {
-                String line =  scanner.nextLine();
+                String line = scanner.nextLine();
                 figuras[i] = construirFigura(line);
             }
         }
@@ -42,7 +41,6 @@ public class Generador {
     }
 
     /**
-     *
      * @param linea -
      * @return figura en base a la linea ingresada
      */

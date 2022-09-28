@@ -20,13 +20,13 @@ public class Menu {
         this.opciones = opciones;
     }
 
-    public Menu(){
+    public Menu() {
         String[] ops = {"1- Consultar Posicion ", "2- Dar de baja objeto", "3- Agregar objeto manualmente",
                 "4- Listar objetos", "5- Objeto con superficie maxima", "6- Objeto con superficie minima", "7- Salir"};
         this.opciones = ops;
     }
 
-    public Menu(String[]opciones){
+    public Menu(String[] opciones) {
         this.opciones = opciones;
     }
 
@@ -35,8 +35,8 @@ public class Menu {
         Post: imprime las opciones disponibles del menu
      */
 
-    public void mostrarOpciones(){
-        for(String op : this.opciones ){
+    public void mostrarOpciones() {
+        for (String op : this.opciones) {
             System.out.println(op);
         }
     }
@@ -46,8 +46,8 @@ public class Menu {
         Post: muestra la figura de la posicion indicada siempre y cuando no sea null
      */
 
-    public void consultarPosicion(int posicion, Figura[]figuras) {
-        if(figuras[posicion]!= null){
+    public void consultarPosicion(int posicion, Figura[] figuras) {
+        if (figuras[posicion] != null) {
             System.out.println(figuras[posicion].mostrar());
         }
     }
@@ -67,26 +67,26 @@ public class Menu {
         Post: se agrega manualmente al vector la nueva figura
      */
 
-    public Figura[] agregarObjetoManualmente(String inicial, double radio, double altura, double base, Figura[] figuras){
+    public Figura[] agregarObjetoManualmente(String inicial, double radio, double altura, double base, Figura[] figuras) {
 
         int indiceVacio = verificarEspacioVacio(figuras);
 
-        if (indiceVacio == -1 ) {
+        if (indiceVacio == -1) {
             Figura[] figurasAux = agrandarVector(figuras);
-            return crearFigura(figurasAux, figurasAux.length-1, inicial, radio, base, altura);
+            return crearFigura(figurasAux, figurasAux.length - 1, inicial, radio, base, altura);
 
         }
-        return crearFigura(figuras, indiceVacio, inicial,radio, base,altura);
+        return crearFigura(figuras, indiceVacio, inicial, radio, base, altura);
     }
 
     public void listarObjetos(Figura[] figuras) {
 
         System.out.println("");
 
-        for (int i=0; i<figuras.length; i++){
-             if(figuras[i]!=null){
-                 System.out.println(figuras[i].mostrar());
-             }
+        for (int i = 0; i < figuras.length; i++) {
+            if (figuras[i] != null) {
+                System.out.println(figuras[i].mostrar());
+            }
         }
 
         System.out.println("");
@@ -101,8 +101,8 @@ public class Menu {
 
         double superficieMaxima = 0;
 
-        for (Figura figura : figuras ) {
-            if (figura!= null && figura.getSuperficie()>superficieMaxima) {
+        for (Figura figura : figuras) {
+            if (figura != null && figura.getSuperficie() > superficieMaxima) {
                 superficieMaxima = figura.getSuperficie();
             }
         }
@@ -117,21 +117,21 @@ public class Menu {
     public void indicarSuperficieMinima(Figura[] figuras) {
         //Arbitrariamente asigno el primero no null como el mayor. Definir manejo de excepciones
         double superficieMinima = -1;
-        for(Figura f : figuras) {
-            if (f != null ) {
+        for (Figura f : figuras) {
+            if (f != null) {
                 superficieMinima = f.getSuperficie();
             }
         }
 
-        for (Figura figura : figuras ) {
-            if (figura!= null && figura.getSuperficie()<superficieMinima) {
+        for (Figura figura : figuras) {
+            if (figura != null && figura.getSuperficie() < superficieMinima) {
                 superficieMinima = figura.getSuperficie();
             }
         }
         System.out.println("La superficie minima es de : " + superficieMinima + "\n");
     }
 
-    public void salir(){
+    public void salir() {
         System.out.println("Gracias por utilizar la aplicacion de figuras. Hasta luego! ");
         System.out.println(" ");
         System.exit(0);
@@ -142,10 +142,10 @@ public class Menu {
         Post: se retorna el indice vacio. En caso de no encontrar alguno, retorna -1
      */
 
-    public int verificarEspacioVacio(Figura[] figuras){
+    public int verificarEspacioVacio(Figura[] figuras) {
         int indiceVacio = -1;
-        for (int i=0; i<figuras.length; i++){
-            if (figuras[i]==null){
+        for (int i = 0; i < figuras.length; i++) {
+            if (figuras[i] == null) {
                 indiceVacio = i;
                 //break;
                 return indiceVacio;
@@ -160,10 +160,10 @@ public class Menu {
      */
 
     public Figura[] agrandarVector(Figura[] figuras) {
-        Figura[] figurasAux = new Figura[figuras.length+1];
+        Figura[] figurasAux = new Figura[figuras.length + 1];
 
-        for(int a = 0; a<figuras.length;a++){
-            figurasAux[a]=figuras[a];
+        for (int a = 0; a < figuras.length; a++) {
+            figurasAux[a] = figuras[a];
         }
 
         return figurasAux;
@@ -173,19 +173,19 @@ public class Menu {
         Pre: recibe el vector de figuras, el indice en el que se agregará, y los valores de la figura a crear
         Post: retorna el vector de figuras con la figura nueva incluida
      */
-    public Figura[] crearFigura(Figura[] figuras, int indice, String inicial, double radio, double base, double altura){
+    public Figura[] crearFigura(Figura[] figuras, int indice, String inicial, double radio, double base, double altura) {
 
-        if (inicial.equals("T")){
+        if (inicial.equals("T")) {
             Triangulo tri = new Triangulo(base, altura);
             figuras[indice] = tri;
         }
 
-        if (inicial.equals("R")){
+        if (inicial.equals("R")) {
             Rectangulo re = new Rectangulo(base, altura);
             figuras[indice] = re;
         }
 
-        if (inicial.equals("C")){
+        if (inicial.equals("C")) {
             Circulo ci = new Circulo(radio);
             figuras[indice] = ci;
         }
@@ -196,9 +196,9 @@ public class Menu {
         Pre: Recibe la opción deseada y las figuras existentes
         Post: Realiza lo indicado retornando las figuras en su estado actual
      */
-    public Figura[] seleccionarOpcion(int opcion, Figura[] figuras){
+    public Figura[] seleccionarOpcion(int opcion, Figura[] figuras) {
         Scanner sn = new Scanner(System.in);
-        switch(opcion){
+        switch (opcion) {
             case 1:
                 System.out.println("Ingrese la posición que quiere consultar: \n");
                 int p1 = sn.nextInt() - 1;
@@ -220,7 +220,7 @@ public class Menu {
                 System.out.println("<<<<<--->>>>> NO se permiten numeros con punto. Por ejemplo: 15.5 <<<<<--->>>>> \n");
                 int p3 = sn.nextInt();
 
-                switch (p3){
+                switch (p3) {
                     case 1:
                         System.out.println("Ingrese radio del circulo: \n");
                         double radio = sn.nextDouble();
@@ -240,7 +240,7 @@ public class Menu {
                         System.out.println("Ingrese base del triangulo: \n");
                         double baseTriangulo = sn.nextDouble();
                         System.out.println("Ingrese altura del triangulo: \n");
-                        double alturaTriangulo =sn.nextDouble();
+                        double alturaTriangulo = sn.nextDouble();
                         figuras = agregarObjetoManualmente("T", 0, baseTriangulo, alturaTriangulo, figuras);
                         System.out.println("Figura agregada exitosamente \n");
                         break;

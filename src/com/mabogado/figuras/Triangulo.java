@@ -1,6 +1,6 @@
 package com.mabogado.figuras;
 
-public class Triangulo extends Figura{
+public class Triangulo extends Figura {
 
     private double base;
     private double altura;
@@ -11,7 +11,8 @@ public class Triangulo extends Figura{
         this.superficie();
     }
 
-    public Triangulo(){}
+    public Triangulo() {
+    }
 
     public double getBase() {
         return base;
@@ -31,7 +32,7 @@ public class Triangulo extends Figura{
 
     @Override
     public double superficie() {
-        this.setSuperficie((this.altura*this.base)/2);
+        this.setSuperficie((this.altura * this.base) / 2);
         return this.getSuperficie();
     }
 

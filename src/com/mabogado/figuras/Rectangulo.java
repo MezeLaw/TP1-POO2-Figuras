@@ -1,6 +1,6 @@
 package com.mabogado.figuras;
 
-public class Rectangulo extends Figura{
+public class Rectangulo extends Figura {
 
     private double base;
     private double altura;
@@ -11,7 +11,8 @@ public class Rectangulo extends Figura{
         this.superficie();
     }
 
-    public Rectangulo() {}
+    public Rectangulo() {
+    }
 
     public double getBase() {
         return base;
@@ -31,12 +32,12 @@ public class Rectangulo extends Figura{
 
     @Override
     public double superficie() {
-        this.setSuperficie(this.altura*this.base);
+        this.setSuperficie(this.altura * this.base);
         return this.getSuperficie();
     }
 
     @Override
     public String mostrar() {
-        return "Rectangulo de base "+ this.base + " y altura "+ this.altura + " y superficie " + this.superficie();
+        return "Rectangulo de base " + this.base + " y altura " + this.altura + " y superficie " + this.superficie();
     }
 }
