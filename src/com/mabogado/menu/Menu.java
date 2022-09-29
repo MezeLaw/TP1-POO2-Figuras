@@ -180,10 +180,7 @@ public class Menu {
         System.exit(0);
     }
 
-    /*
-        Pre: Se brinda un vector de figuras
-        Post: se retorna el indice vacio. En caso de no encontrar alguno, retorna -1
-     */
+
 
     /**
      * Pre:
@@ -213,7 +210,7 @@ public class Menu {
      */
 
     public Figura[] agrandarVector(Figura[] figuras) {
-        Figura[] figurasAux = new Figura[figuras.length + 1];
+        Figura[] figurasAux = new Figura[figuras.length*2];
 
         for (int a = 0; a < figuras.length; a++) {
             figurasAux[a] = figuras[a];
