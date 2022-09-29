@@ -28,9 +28,14 @@ public class Main {
         boolean salir = false;
 
         while (!salir) {
-            Scanner sn = new Scanner(System.in);
-            int opcion = sn.nextInt();
-            figuras = menu.seleccionarOpcion(opcion, figuras);
+            try {
+                Scanner sn = new Scanner(System.in);
+                int opcion = sn.nextInt();
+                figuras = menu.seleccionarOpcion(opcion, figuras);
+            } catch (Exception e){
+                System.out.println("Ocurrio un problema al procesar el pedido. Intente nuevamente!");
+                menu.mostrarOpciones();
+            }
         }
     }
 }
